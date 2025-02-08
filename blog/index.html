@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="\static\st.css">
+    <title>myblog</title>
+</head>
+<body class="elements">
+    <h1 style="text-align:center">welcome</h1>
+    <div>
+        {% for each in data:%}
+
+
+            <h2>{{each["title"] }}</h2>
+            <a href="{{url_for('sb',nu=data.index(each))}}">check the blog</a>
+
+
+        {% endfor %}
+
+    </div>
+
+    <footer class="footer">
+
+        <p>&copy;allright belongs adhicorporation{{cy}}</p>
+    </footer>
+</body>
+</html>
