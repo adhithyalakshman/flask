@@ -1,0 +1,21 @@
+from flask import Flask,render_template
+from datetime import datetime
+import requests
+app=Flask(__name__)
+nowd=datetime.now()
+tyear=nowd.year
+#deliver home page
+@app.route("/")
+def welcome():
+    response1=requests.get(url="https://api.npoint.io/c790b4d5cab58020d391")
+
+
+    return render_template("index.html",data=response1.json())
+# functin for return specific blog
+@app.route("/blog/<nu>")
+def sb(nu):
+    print(nu)
+    response1 = requests.get(url="https://api.npoint.io/c790b4d5cab58020d391")
+    t=response1.json()
+    tm=t[int(nu)]
+    return render_template("fun.html",data=tm,)
