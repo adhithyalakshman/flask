@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>contactform</title>
+</head>
+<style>
+    .head{
+        text-align:center;
+   }
+</style>
+<body>
+   {% from "bootstrap/form.html" import render_form %}
+        <h1>login</h1>
+        {{ render_form(form) }}
+</body>
+</html>
