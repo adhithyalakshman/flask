@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>contactform</title>
+</head>
+<style>
+    .head{
+        text-align:center;
+   }
+</style>
+<body>
+    <form action="/signin" method="post"  novalidate>
+        {{form.csrf_token}}
+        {{form.name.label}}
+
+        {{form.name(size=30)}}
+        {% for  eror in form.name.errors %}
+            {{eror}}
+        {% endfor %}
+
+        <br>
+
+        {{form.password.label}}
+        {{form.password(size=8)}}
+
+        {% for  eror in form.password.errors %}
+            {{eror}}
+        {% endfor %}
+
+        <br>
+        {{form.submit}}
+
+
+    </form>
+</body>
+</html>
